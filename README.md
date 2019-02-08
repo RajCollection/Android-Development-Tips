@@ -7,10 +7,10 @@
           - go to bin folder of java jdk
           C:\Program Files\Java\jdk1.8.0_111\bin>
           - then run keytool command
-          keytool -list -v -keystore "C:\Users\raj\Desktop\hubnrKeystore.jks"
+          keytool -list -v -keystore "C:\Users\username\Desktop\hubnrKeystore.jks"
           - it will ask the password (password of keystore file while generated signed apk)
           - it will generate sha1 certificate if everything is correct
-          37:66:62:FA:B2:03:C6:62:39:AA:4E:4A:CB:17:04:58:5B:79:67:D3
+          37:43:A1::D3....etc
 
 
      2. go to https://developers.google.com/identity/sign-in/android/start-integrating
@@ -21,6 +21,45 @@
           - Add sha1 key which you generated in previous step
           - Then click on CREATE button, copy generated cliend ID
           - Paste it in in your android studio project -> app -> res -> values -> strings.xml
-     <string name="google_server_client_id">paste here</string>
+	  <string name="google_server_client_id">paste here</string>
 
-	3. generate apk. thats it
+    3. generate apk. thats it
+	
+----------------------------------------------------------------------------------------------------------------------------------
+ 2. How to generate signed APK
+   
+	   - go to build, select Generate Signed Bundle/APK
+	   - Select APK
+	   - Click on create new (if your don't have keystore generated)
+	   - Select keystore path where you want to save that file
+	   - Give password (remember the password)
+	   - You can change alias name is required
+	   - Same password you can give for key also
+	   - Fill other details
+	   - Click on OK
+	   - It will take you previous page and details will be filled automatically
+	   - Click on NEXT
+	   - Check both check boxes and click finish. Thats it
+-------------------------------------------------------------------------------------------------------------------------------------
+3. Internet permission to your APP
+	   - Add this line into your AndroidManifest.xml, outside of application tag
+	    <uses-permission android:name="android.permission.INTERNET" />
+
+4. External Storage read and write permission to your APP
+	   - Add this line into your AndroidManifest.xml, outside of application tag
+	    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+5. Camera permission to your APP
+	   - Add this line into your AndroidManifest.xml, outside of application tag
+	    <uses-permission android:name="android.permission.CAMERA" />
+--------------------------------------------------------------------------------------------------------------------------------------
+6. Activity full screen
+	   <activity android:name=".YourActivity"
+		    android:configChanges="orientation"
+		    android:screenOrientation="portrait"
+		    android:theme="@style/AppTheme.NoActionBar"/>
+
+7.Change Android App version
+   	Go to build.gradle (Module: app) file, edit your versionName "your App version"
+
