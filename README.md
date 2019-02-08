@@ -55,10 +55,10 @@
 	    <uses-permission android:name="android.permission.CAMERA" />
 --------------------------------------------------------------------------------------------------------------------------------------
 6. Activity full screen
-	   <activity android:name=".YourActivity"
+	   "<activity android:name=".YourActivity"
 		    android:configChanges="orientation"
 		    android:screenOrientation="portrait"
-		    android:theme="@style/AppTheme.NoActionBar"/>
+		    android:theme="@style/AppTheme.NoActionBar"/>"
 
 7.Change Android App version
    	Go to build.gradle (Module: app) file, edit your versionName "your App version"
