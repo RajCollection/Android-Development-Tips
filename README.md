@@ -55,6 +55,6 @@
 	    <uses-permission android:name="android.permission.CAMERA" />
 --------------------------------------------------------------------------------------------------------------------------------------
 
-6.Change Android App version
+6. Change Android App version
    	Go to build.gradle (Module: app) file, edit your versionName "your App version"
 
